@@ -23,4 +23,4 @@ This project was created with Docker, the Dockerfile is:
     
     CMD  ["python",  "app/main.py"]
 
-To run just download this project and run the follow commands:  `docker build -t caesar-cipher .`  then run `docker run -it caesar-ciper`. )
+To run just download this project and run the follow commands:  `docker build -t caesar-cipher .`  then run `docker run -it caesar-cipher`. )
