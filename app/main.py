@@ -5,13 +5,15 @@ user_choice = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message: \n").lower()
 shift = int(input("Type the shift number: \n"))
 
-def encrypt(plain_text, shift_amount):
-  cipher_text = ""
-  for letter in plain_text:
+
+def caesar(start_text, shift_amount, cipher_direction):
+  end_text = ""
+  if cipher_direction == "decode":
+      shift_amount *= -1
+  for letter in start_text:
     position = alphabet.letters.index(letter)
     new_position = position + shift_amount
-    new_letter = alphabet.letters[new_position]
-    cipher_text += new_letter
-  print(f"The encoded text is {cipher_text}")
+    end_text += alphabet.letters[new_position]
+  print(f"Here's the {user_choice}d result: {end_text}")
 
-encrypt(plain_text=text, shift_amount=shift)
+caesar(start_text=text, shift_amount=shift, cipher_direction=user_choice)
